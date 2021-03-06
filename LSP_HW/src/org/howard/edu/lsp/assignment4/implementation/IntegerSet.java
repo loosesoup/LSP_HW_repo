@@ -51,7 +51,7 @@ public class IntegerSet {
 
 	/**
 	 * 
-	 * @param takes in an object of this class (IntegerSet)
+	 * @param b is member of this class 
 	 * @return boolean t/f depending on if the contents of the 2 sets are the same
 	 */
 	public boolean equals(IntegerSet b) {
@@ -103,6 +103,7 @@ public class IntegerSet {
 			int ithVal = set.get(0);
 			// loop over set, if ith item is greater than max, update max to the value of ith item
 			for (int i=0;i<set.size();i++) {
+				ithVal = set.get(i);
 				if (ithVal > max)
 					max = ithVal;
 			}
@@ -126,6 +127,7 @@ public class IntegerSet {
 			int ithVal = set.get(0);
 			// loop over set, if ith item is less than min, update min to the value of ith item
 			for (int i=0;i<set.size();i++) {
+				ithVal = set.get(i);
 				if (ithVal < min)
 					min = ithVal;
 			}
@@ -134,7 +136,7 @@ public class IntegerSet {
 	}
 
 	/**
-	 * returns nothing
+	 * 
 	 * @param item that will be added as a member to the set if not already
 	 * if the item is already a member, nothing happens
 	 */
@@ -146,7 +148,7 @@ public class IntegerSet {
 	}
 
 	/**
-	 * returns nothing
+	 * 
 	 * @param item that will be removed from the set if the item is present
 	 * if the item is not already a member, nothing happens
 	 */
