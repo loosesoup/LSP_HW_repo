@@ -81,32 +81,54 @@ class IntegerSetTest {
 	
 	@Test
 	@DisplayName("Test Cases for largest")
-	public void testLargest() {
+	public void testLargest() throws IntegerSetException {
 
 		IntegerSet set1 = new IntegerSet();
-		IntegerSetException exception = new IntegerSetException("Cannot search Set of length 0");
-		assertThrows(exception,set1.largest());
-		assertFalse(set1.contains(90));
+
+		assertThrows(IntegerSetException.class,() -> set1.largest(),"Cannot search Set of length 0");
+		
+		for (int i = 0;i>-100;i--)
+			set1.add(i);
+		assertFalse(set1.largest() == -99);
+		assertTrue(set1.largest() == 0);
 		
 		for (int i = 0;i<100;i++)
 			set1.add(i);
+		assertFalse(set1.largest() == 100);
+		assertTrue(set1.largest() == 99);
 	}
 	
 	@Test
 	@DisplayName("Test Cases for smallest")
-	public void testSmallest() {
-		//assertEquals()
+	public void testSmallest() throws IntegerSetException {
+		
+		IntegerSet set1 = new IntegerSet();
+
+		assertThrows(IntegerSetException.class,() -> set1.smallest(),"Cannot search Set of length 0");
+		
+		
+		for (int i = 0;i<100;i++)
+			set1.add(i);
+		assertFalse(set1.smallest() == 1);
+		assertTrue(set1.smallest() == 0);
+		
+		for (int i = 0;i>-100;i--)
+			set1.add(i);
+		assertFalse(set1.smallest() == 0);
+		assertTrue(set1.smallest() == -99);
 	}
 	
 	@Test
 	@DisplayName("Test Cases for add")
 	public void testAdd() {
+		
 		IntegerSet set1 = new IntegerSet();
 		set1.add(0);
 		assertTrue(set1.contains(0));
 		assertFalse(set1.contains(1));
 		set1.add(0);
 		assertTrue(set1.length()==1);
+		
 		for (int i = 1;i<100;i++) {
 			set1.add(i);
 			assertTrue(set1.contains(i));
@@ -133,19 +155,70 @@ class IntegerSetTest {
 	@Test
 	@DisplayName("Test Cases for union")
 	public void testUnion() {
-		//assertEquals()
+		IntegerSet set1 = new IntegerSet();
+		IntegerSet set2 = new IntegerSet();
+		IntegerSet set3 = new IntegerSet();
+		
+		set1.union(set2);
+		assertTrue(set1.equals(set2));
+		assertTrue(set1.equals(set3));
+		
+		for (int i = 0;i<10;i++)
+			set1.add(i);
+		
+		for (int i = 0;i>-10;i--)
+			set2.add(i);
+		set1.union(set2);
+		assertTrue(set1.contains(0));
+		assertFalse(set1.contains(1));
+		
+		
 	}
 	
 	@Test
 	@DisplayName("Test Cases for intersection")
 	public void testIntersection() {
-		//assertEquals()
+		
+		IntegerSet set1 = new IntegerSet();
+		IntegerSet set2 = new IntegerSet();
+		IntegerSet set3 = new IntegerSet();
+		
+		set1.intersect(set2);
+		assertTrue(set1.equals(set2));
+		assertTrue(set1.equals(set3));
+		
+		for (int i = 0;i<100;i++)
+			set1.add(i);
+		
+		for (int i = 0;i<10;i++)
+			set2.add(i);
+		set1.union(set2);
+		assertTrue(set1.contains(9));
+		assertFalse(set1.contains(10));
+		assertTrue(set1.length()==10);
+		
+		set3.intersect(set1);
+		assertFalse(set3.contains(1));
+		
 	}
 	
 	@Test
 	@DisplayName("Test Cases for difference")
 	public void testDiff() {
-		//assertEquals()
+		IntegerSet set1 = new IntegerSet();
+		IntegerSet set2 = new IntegerSet();
+		IntegerSet set3 = new IntegerSet();
+		
+		for (int i = 0;i<10;i++)
+			set1.add(i);
+		
+		for (int i = 0;i<2;i++)
+			set2.add(i);
+		set2.diff(set1);
+		assertTrue(set2.isEmpty()==true);
+		set1.diff(set3);
+		assertTrue(set1.length()==10);
+		
 	}
 	
 	@Test
@@ -189,12 +262,12 @@ class IntegerSetTest {
 	
 	
 	
-	@Test
-	void test() {
-		fail("Not yet implemented");
-		
-	}
-	
+//	@Test
+//	void test() {
+//		fail("Not yet implemented");
+//		
+//	}
+//	
 	
 	
 	

@@ -13,16 +13,22 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		
-		IntegerSet test = new IntegerSet(); // instantiate new object
-		for (int i = 1;i<4;i++)
-			test.add(i);
+		IntegerSet test1 = new IntegerSet(); // instantiate new object
 		
 		IntegerSet test2 = new IntegerSet();
-		for (int i = 1;i<6;i++)
-			test2.add(i);
+		for (int i = 0;i<10;i++)
+			test1.add(i);
 		
-		System.out.println("test1 initially" + test.toString());
+		for (int j = 0;j>-10;j--)
+			test2.add(j);
+		
+		System.out.println("test1 initially" + test1.toString());
 		System.out.println("test2 initially" + test2.toString());
+		
+		test1.union(test2);
+		
+		System.out.println("test1 U test2" + test1.toString());
+		System.out.println("test2" + test2.toString());
 		
 //		System.out.println("test2 3rd item " +test2.get(2));
 //		
@@ -30,7 +36,7 @@ public class Main {
 //		System.out.println("test2 contains 4? " + test2.contains(4));
 //		System.out.println("test contains 4? " + test.contains(4));
 //		System.out.println("test1 = test2? " + test.equals(test2));
-		test2.diff(test);
+		test2.diff(test1);
 //		System.out.println("test2-test1 " + test.toString());
 //		System.out.println("test2" + test2.toString());
 		System.out.println("test2-test1" + test2.toString());
