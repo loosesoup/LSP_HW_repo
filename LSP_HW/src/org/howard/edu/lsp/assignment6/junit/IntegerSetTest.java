@@ -163,14 +163,18 @@ class IntegerSetTest {
 		assertTrue(set1.equals(set2));
 		assertTrue(set1.equals(set3));
 		
-		for (int i = 0;i<10;i++)
+		for (int i = 1;i<10;i++) {
 			set1.add(i);
+			set3.add(i);
+		}
 		
-		for (int i = 0;i>-10;i--)
+		for (int i = -1;i>-10;i--)
 			set2.add(i);
 		set1.union(set2);
-		assertTrue(set1.contains(0));
-		assertFalse(set1.contains(1));
+		assertTrue(set1.contains(-9));
+		
+		assertFalse(set1.length()==set3.length());
+		assertTrue(set1.length() == set3.length()+set2.length());
 		
 		
 	}
@@ -192,7 +196,7 @@ class IntegerSetTest {
 		
 		for (int i = 0;i<10;i++)
 			set2.add(i);
-		set1.union(set2);
+		set1.intersect(set2);
 		assertTrue(set1.contains(9));
 		assertFalse(set1.contains(10));
 		assertTrue(set1.length()==10);

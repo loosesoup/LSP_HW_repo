@@ -177,29 +177,17 @@ public class IntegerSet {
 		
 		//loops over intSetb and add item to map with value of true
 		for (int i = 0;i<intSetb.length();i++)
-			map.put(intSetb.get(i), false);
+			map.put(intSetb.get(i), true);
 		
 		// loops over set and add item to map or does nothing if its there already
-		for (int i = 0;i<set.size();i++) {
-			if (map.containsKey(set.get(i))) 
-				map.put(set.get(i), true);
-			else
-				map.put(set.get(i), false);
-		}
+		for (int i = 0;i<set.size();i++)
+			map.put(set.get(i), true);
 		
 		// clears the set
 		set.clear();
 		// adds all of the keys of the map to the set
-		//set.add((num)-> );
-		//map.forEach(n -> {if (map.get(n) == true) set.add(n); });
+		set.addAll(map.keySet());
 		
-		List<Integer> mapKeys = new ArrayList<Integer>();
-		mapKeys.addAll(map.keySet()); // creates a list of the keys in the map
-		
-		for (int i = 0;i<mapKeys.size();i++) {
-			if (map.get(mapKeys.get(i))== true)
-				set.add(mapKeys.get(i));
-		}
 	}
 
 	/**
