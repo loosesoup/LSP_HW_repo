@@ -5,13 +5,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.howard.edu.lsp.assignment6.integerset.*;
 
 
-import org.junit.jupiter.api.Assertions;
+//import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class IntegerSetTest {
-
-
 
 	@Test
 	@DisplayName("Test Cases for clear")
@@ -28,9 +26,6 @@ class IntegerSetTest {
 		IntegerSet set2 = new IntegerSet();
 		set2.clear();
 		assertTrue(set2.isEmpty());
-		
-		
-		
 		
 	}
 	
@@ -288,7 +283,5 @@ class IntegerSetTest {
 		
 		
 	}
-	
-	
 	
 }
