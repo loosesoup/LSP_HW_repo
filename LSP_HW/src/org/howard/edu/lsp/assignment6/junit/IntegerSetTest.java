@@ -5,9 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.howard.edu.lsp.assignment6.integerset.*;
 
 
-//import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 class IntegerSetTest {
 
