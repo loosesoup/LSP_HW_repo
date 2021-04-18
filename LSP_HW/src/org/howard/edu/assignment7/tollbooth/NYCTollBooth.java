@@ -1,5 +1,10 @@
 package org.howard.edu.assignment7.tollbooth;
 
+/**
+ * 
+ * @author avon abrahams
+ * NYCtollBooth implements Tollbooth interface
+ */
 public class NYCTollBooth implements TollBooth {
 	private int receipts = 0;
 	private int totalTrucks = 0;
@@ -19,18 +24,7 @@ public class NYCTollBooth implements TollBooth {
 		return cost;
 	}
 	
-	/**
-	 *  for input weight as us ton 
-	 */
-//	@Override
-//	public int calculateToll(Truck truck) {
-//		//weight is given in lbs
-//		// 1000 lbs == 1/2 ton
-//		totalTrucks++;
-//		int cost = (Math.floorDiv(truck.weight, 1000)*10) + (5*truck.axels);
-//		reciptsSinceCollection = reciptsSinceCollection + cost;
-//		return cost;
-//	}
+
 	
 	@Override
 	public void displayData() {

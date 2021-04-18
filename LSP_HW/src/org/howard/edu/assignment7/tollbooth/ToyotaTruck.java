@@ -1,5 +1,10 @@
 package org.howard.edu.assignment7.tollbooth;
 
+/**
+ * 
+ * @author avon abrahams
+ * Toyota truck class that is a subclass of Truck
+ */
 public class ToyotaTruck extends Truck {
 	
 
@@ -8,7 +13,4 @@ public class ToyotaTruck extends Truck {
 		make =  "Toyota";
 	}
 	
-	public String toString() {
-		return "make " + make + "\nweight " + this.weight + "\naxels " + this.axels;
-	}
 }
