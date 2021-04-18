@@ -7,5 +7,9 @@ public interface TollBooth {
 	void displayData();
 	
 	void reset();
+	
+	int getNumTrucks();
+	
+	int getReceipts();
 
 }
