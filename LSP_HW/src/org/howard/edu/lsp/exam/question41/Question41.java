@@ -19,6 +19,5 @@ public class Question41 {
 					left++;
 			}
 	    }
-	
 
 }
